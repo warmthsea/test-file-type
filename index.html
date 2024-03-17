@@ -7,13 +7,14 @@
 
   <h1>文件上传</h1>
 
-  <form action="upload.php" method="post" enctype="multipart/form-data">
+  <form   method="post" enctype="multipart/form-data">
   
     <label for="file">选择文件:</label>
     <input type="file" id="file" name="file"><br><br>
 
     <input type="submit" value="上传">
-
+    <span id="testID">1</span>
+    <span id="testID2">1</span>
   </form>
 
   <script>
@@ -25,8 +26,13 @@
       // 获取文件对象
       const file = this.files[0];
       
+        console.log(file)
         console.log(file.type)
-        alert(file.type)
+        const element = document.getElementById('testID');
+        element.innerHTML = file.name
+        const element2 = document.getElementById('testID2');
+        element2.innerHTML = file.type
+        return
     });
 
   </script>
