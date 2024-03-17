@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>文件上传示例</title>
+</head>
+<body>
+
+  <h1>文件上传</h1>
+
+  <form action="upload.php" method="post" enctype="multipart/form-data">
+  
+    <label for="file">选择文件:</label>
+    <input type="file" id="file" name="file"><br><br>
+
+    <input type="submit" value="上传">
+
+  </form>
+
+  <script>
+    // Javascript验证
+    
+    const fileInput = document.getElementById('file');
+
+    fileInput.addEventListener('change', function() {
+      // 获取文件对象
+      const file = this.files[0];
+      
+        console.log(file.type)
+        alert(file.type)
+    });
+
+  </script>
+
+</body>
+</html>
